@@ -1,7 +1,8 @@
 const express = require("express");
+const user=require('./routes/user.js')
 require('dotenv').config()
 const app = express();
-
+app.use('/',user)
 const port = process.env.PORT;
 app.get('/',(req,res) => {
     res.send({ok:'you are on home page'})
